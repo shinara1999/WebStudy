@@ -1,0 +1,62 @@
+<!--
+	
+	105p
+	
+	fieldset : 입력창을 그룹으로 모아서 처리 (연관있는 데이터를 묶어서 사용)
+	legend : 테두리 제목
+	label
+	=> 가급적이면 table을 사용하지 않는다.(권장)
+	   => CSS
+	      display : table, table-row, table-cell
+	      		   <table> <tr>		  <td>
+					table-column <th>
+	   ================================================ 보이지 않는다. (CSS)
+	=> 분할 => 레이아웃
+	   가로분할 => <span>
+	   세로분할 => <div>
+	=> HTML에서 레이아웃 태그 (시멘텍)
+	   ================================================
+	            	header : 검색창 , 로그
+	   ================================================
+	   					nav : 메뉴 (주)
+	   ================================================
+	   	   부가적인 정보 (aside)			부가적인 정보
+	   	   => 로그인/부메뉴				인기상품/공지/뉴스		
+	   			|							|
+	   			|							|
+	   			|							|
+	   			|	실제 화면 출력 (section)   |
+	   ================================================	
+	   		footer : 개인정보 방침 , 회사정보 , 사이트맵
+	   ================================================	
+	   시멘텍 => 태그를 검색이 쉽게
+	   ==== HTML은 추상적으로 만들어져 있다.
+	        <object> : 동영상 => <video>, <audio>
+		| XML
+	   학생 정보
+	   <a></a> <name></name>
+	   <b></b> <addr></addr>
+	   <c></c> <phone></phone>	=> 추상적이지 않고 보기가 쉽다.
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<fieldset> <!-- 테두리로 묶어주는 것 -->
+		<legend>개인정보</legend> <!-- fieldset 에 대한 제목 -->
+		<table>
+			<tr>
+				<td><label for="name">이름</label></td>
+				<td><input type="text" id="name" size="15"></td>
+			</tr>
+			<tr>
+				<td><label for="addr">주소</label></td>
+				<td><input type="text" id="addr" size="30"></td>
+			</tr>
+		</table>
+	</fieldset>
+</body>
+</html>
