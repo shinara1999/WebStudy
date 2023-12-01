@@ -1,0 +1,71 @@
+@charset "UTF-8";
+	/*.container{
+		margin-top:50px
+	}
+	.row{
+		
+	}*/
+	#image{
+		width: 100%;
+		height: 500px;
+		border-radius: 10px;
+	}
+	#title, #price{
+		font-size: 25px;
+		font-weight: bold;
+	}
+	#sub{
+		color: lightslategrey;
+	}
+	#percent{
+		font-size: 25px;
+		color: deeppink;
+		font-weight: bold;
+	}
+	#label{
+		font-size: 10px;
+		color: yellowgreen;
+		font-weight: bold;
+	}
+	#price2{
+		font-size: 25px;
+		font-weight: bold;
+		color: yellowgreen;
+	}
+	#delivery{
+		color: lightslategray;
+	}
+	#star{
+		color: orange;
+		font-weight: bold;
+	}
+	#bold{
+		font-weight: bold;
+	}
+	#count{
+		color: lightslategrey;
+	}
+	img[src*="delivery3"]{
+		width: 20px;
+		height: 20px;
+	}
+	#sel{
+		width: 100%;
+		height: 40px;
+	}
+	#cart, #buy{
+		width: 220px;
+		height: 50px;
+		border: 2px seagreen;
+		font-size: 20px;
+		font-weight: bold;
+		border-radius: 10px;
+	}
+	#cart{
+		background-color: gainsboro;
+		color: seagreen;
+	}
+	#buy{
+		background-color: seagreen;
+		color: gainsboro;
+	}

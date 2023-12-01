@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<style>
+	.container{
+		margin-top:50px
+	}
+	.row{
+		
+	}
+	#image{
+		width: 100%;
+		height: 500px;
+		border-radius: 10px;
+	}
+	#title, #price{
+		font-size: 25px;
+		font-weight: bold;
+	}
+	#sub{
+		color: lightslategrey;
+	}
+	#percent{
+		font-size: 25px;
+		color: deeppink;
+		font-weight: bold;
+	}
+	#label{
+		font-size: 10px;
+		color: yellowgreen;
+		font-weight: bold;
+	}
+	#price2{
+		font-size: 25px;
+		font-weight: bold;
+		color: yellowgreen;
+	}
+	#delivery{
+		color: lightslategray;
+	}
+	#star{
+		color: orange;
+		font-weight: bold;
+	}
+	#bold{
+		font-weight: bold;
+	}
+	#count{
+		color: lightslategrey;
+	}
+	img[src*="delivery3"]{
+		width: 20px;
+		height: 20px;
+	}
+	#sel{
+		width: 100%;
+		height: 40px;
+	}
+	#cart, #buy{
+		width: 220px;
+		height: 50px;
+		border: 2px seagreen;
+		font-size: 20px;
+		font-weight: bold;
+		border-radius: 10px;
+	}
+	#cart{
+		background-color: gainsboro;
+		color: seagreen;
+	}
+	#buy{
+		background-color: seagreen;
+		color: gainsboro;
+	}
+</style>
+</head>
+<body>
+	<div class="container">
+	<div class="row">
+		<table class="table">
+			<tr>
+				<td width="35%" align="center" rowspan="9">
+					<img src="https://recipe1.ezmember.co.kr/cache/data/goods/23/09/37/1000040318/1000040318_detail_071.jpg" id="image">
+				</td>
+				<td width="65%" align="center">
+					<span id="title">
+						보퀴진 미피 도자기 무균열 내열냄비 뚝배기 (정품 라이센스) 2colors
+					</span>
+				</td>
+			</tr>
+			<tr>
+				<td width="65%">
+					<span id="sub">사랑스러운 미피 뚝배기로 따뜻한 한 끼!</span>
+				</td>
+			</tr>
+			<tr>
+				<td width="65%">
+					<span id="percent">45%</span>&nbsp;
+					<span id="price">39,900원</span>
+					<p>
+						<del id="psub">73,000원</del>
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td width="65%">
+					<span id="label">첫구매할인가</span>
+					<span id="price2">37,905원</span>
+				</td>
+			</tr>
+			<tr>
+				<td width="65%">
+					<span id="star">★★★★★</span>&nbsp;
+					<span id="bold">4.8</span>
+					<span id="count">(5)</span>
+				</td>
+			</tr>
+			<tr>
+				<td width="65%">
+					<img src="https://recipe1.ezmember.co.kr/img/mobile/icon_delivery3.png">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<span id="delivery">무료배송</span>
+				</td>
+			</tr>
+			<tr>
+				<td width="65%">
+					<select id="sel">
+						<option>옵션선택</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td width="65%">
+					<input type="button" value="장바구니" id="cart">
+					<input type="button" value="바로구매" id="buy">
+				</td>
+			</tr>
+		</table>
+	</div>
+	</div>
+</body>
+</html>

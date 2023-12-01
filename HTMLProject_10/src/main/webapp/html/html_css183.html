@@ -1,0 +1,96 @@
+<!--
+		텍스트 관련 CSS
+		=> font-size , font-family , font-weight
+		=> color
+		1. text-decoration: none, underline, overline
+		   => 메뉴 , <a>
+		2. text-transform : none, uppercase, lowercase
+		3. text-shadow
+		***4. white-space
+		***5. letter-spacing
+		6. word-spacing
+		***7. text-align : 정렬 => left/center/right
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	ul{
+		width: 700px;
+		background-color: lightcyan;
+		color: black;
+	}
+	li{
+		width: auto;
+		list-style: none;
+		display: inline-block;
+		text-transform: uppercase;
+	}
+	a{
+		color: black;
+		text-decoration: none; /* line-through : 취소선 */
+		text-shadow: 5px 5px 3px orangered; /* text-shadow : 그림자효과 */
+	}
+	a:hover{
+		color: peachpuff;
+		text-decoration: overline; /* overline : 위에 선 */
+	}
+	table{
+		width: 600px;
+	}
+	pre{
+		white-space: pre-wrap;  /* 자동 줄바꿈 */
+		font-family: "맑은 고딕";
+		letter-spacing: 0.1em; /* 자간 간격 설정 */
+	}
+</style>
+</head>
+<body>
+	<ul>
+		<li><a href=#>HOME</a></li>
+		<li><a href=#>Member</a></li>
+		<li><a href=#>FreeBoard</a></li>
+		<li><a href=#>Recommend</a></li>
+		<li><a href=#>MyPage</a></li>
+	</ul>
+	<table>
+		<tr>
+			<td><pre>윤석열 대통령이 정책실장직을 신설하고 수석비서관 전원을 교체하는 등 대통령실 전면 개편을 단행했습니다.
+
+김대기 대통령 비서실장은 오늘(30일) 오후 용산 대통령실에서 브리핑을 열고, 이 같은 내용의 인선을 발표했습니다.
+
+먼저, 신설되는 정책실장에는 이관섭 현 국정기획수석이 임명됐습니다.
+
+이로써 비서실과 국가안보실 '2실 체제'로 운영되던 대통령실은 '3실 체제'로 개편됐습니다.
+
+김 비서실장은 신임 정책실장에 대해 "탁월한 정책 기획력과 조율 능력을 발휘해 굵직한 현안을 원만히 해결해 왔다"며 "국정과제를 추진력 있게 이끌어나갈 적임자"라고 인선 배경을 설명했습니다.
+
+또, 정무수석에는 한오섭 현 국정상황실장, 시민사회수석에 황상무 전 KBS 앵커, 홍보수석에는 이도운 현 대변인이 임명됐습니다.
+
+경제수석에는 박춘섭 한국은행 금융통화위원, 사회수석에 장상윤 교육부 차관이 각각 기용됐습니다.
+
+대통령실은 오늘 인선된 신임 정책실장과 수석비서관의 임기는 다음 주 월요일(4일) 시작된다고 밝혔습니다.</pre></td>
+		</tr>
+	</table>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
