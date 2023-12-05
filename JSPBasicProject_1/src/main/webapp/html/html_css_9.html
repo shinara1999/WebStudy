@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	body{
+		background-color: lightgoldenrodyellow;
+	}
+	h1{
+		background-color: yellowgreen;
+		color: white;
+		text-align: center;
+	}
+	h3{
+		color: yellowgreen;
+	}
+	div{
+		width: 100%;
+		height: 720px;
+		border: 1px solid yellowgreen;
+		background: no-repeat url('../image/m2.jpg'); /* 이미지를 바탕에 줄수도 있다. */
+		margin-top: 10px;
+		background-size: 100% 720px; /* 안잘린다. */
+	}
+	div#a{
+		width: 100%;
+		height: 720px;
+		border: 1px solid yellowgreen;
+		background: url('../image/m3.jpg') no-repeat;
+		background-size: cover; /* 잘린다. */
+	}
+</style>
+</head>
+<body>
+	<img src="../image/m1.jpg" width="300" height="450">
+	<h1>서울의 봄</h1>
+	<div>
+		<center>
+			<h3>Hello CSS</h3>
+		</center>
+	</div>
+	<div id="a">
+		<h1>Hello~~</h1>
+	</div>
+</body>
+</html>

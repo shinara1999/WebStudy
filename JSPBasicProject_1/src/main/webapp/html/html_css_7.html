@@ -1,0 +1,65 @@
+<!--
+		각 태그마다 속성
+		=============
+		inline : === === ===
+		block : 태그가 브라우저 한줄 전체를 차지하고 있다.
+				===
+				===
+				===
+		=> 변경시에 사용하는 CSS => display (<table>을 대체)
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	img{
+		width: 100px;
+		height:150px;
+		display: block;
+		margin-bottom: 5px;
+	}
+	.box1,.box2,.box3{
+		width: 150px;
+		height: 150px;
+		background-color: violet;
+		/*margin-top: 10px;*/
+		display: inline-block;
+	}
+	/*
+		width, height가 지정되어있는 경우에 인라인뷰로 변경하고 싶을 때 : inline-block을 사용해야 한다.
+															   (없으면 그냥 inline만 줘도 된다.)
+		=> 가시 속성
+		display:none => 감춘다
+		display:block => 세로 출력
+		display-inline => 가로 출력 (width, height 없는 경우)
+		display:inline-block => 가로 출력 (width, height 지정되어 있는 경우)
+	*/
+</style>
+</head>
+<body>
+	<img src="../image/m1.jpg">
+	<img src="../image/m2.jpg">
+	<img src="../image/m3.jpg">
+	<div class="box1"></div>
+	<div class="box2"></div>
+	<div class="box3"></div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
