@@ -20,6 +20,7 @@ public class SeoulModel {
 		
 		// 2. 데이터베이스 연동
 		SeoulDAO dao=new SeoulDAO();
+		System.out.println("seoul-dao"+dao);
 		List<SeoulVO> list=dao.seoulLocationListData(curpage, "seoul_location");
 		int totalpage=dao.seoulLocationTotalPage("seoul_location");
 		
