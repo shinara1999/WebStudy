@@ -17,7 +17,10 @@
 						<a href="../user/mypage.jsp">마이페이지</a>
 					</nav><a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
 				</div>
-			</header><!-- Banner --><section id="banner"><h1>서 울 도 서 관</h1>
+			</header>
+			<!-- Banner -->
+			<section id="banner">
+			<h1>서 울 도 서 관</h1>
 				<p>서울도서관에 오신 것을 환영합니다.</p>
 				<!-- searchBar include -->
 				<jsp:include page="../etc/searchBar/searchBar.jsp"></jsp:include>

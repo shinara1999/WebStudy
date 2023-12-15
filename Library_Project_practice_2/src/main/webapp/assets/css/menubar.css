@@ -1,4 +1,4 @@
-.container {width: 100%;margin: auto;top: 0px;position: relative; text-align: center;}
+.container {width: 100% !important;margin: auto;padding:0px !important;top: 0px;position: relative; text-align: center;}
 .flexnav,.flexnav ul{list-style:none;margin:0}
 .flexnav,.menu-button{font-family:Lato,Helvetica,sans-serif;line-height:1;background:whitesmoke}
 .flexnav{padding:0;display:block;overflow:visible;width:100%}

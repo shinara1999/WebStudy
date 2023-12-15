@@ -2937,18 +2937,19 @@
 
 	#banner {
 		padding: 12em 0 10em 0;
-		background-image: url('../../images/lib2.jpg');
+		background-image: url('../../images/lib3.jpg');
 		background-size: cover;
 		background-position: top;
 		background-attachment: fixed;
 		background-repeat: no-repeat;
 		text-align: center;
+		
 
 	}
 
 		#banner h1 {
 			font-size: 3.5em;
-			font-weight: 100;
+			font-weight: bold;
 			color: #fff;
 			line-height: 1em;
 			margin: 0 0 0.5em 0;
@@ -2957,6 +2958,7 @@
 
 		#banner p {
 			font-size: 1em;
+			font-weight: semi bold;
 			color: rgba(255, 255, 255, 0.55);
 			margin-bottom: 1.75em;
 		}
