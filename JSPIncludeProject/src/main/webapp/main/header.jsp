@@ -14,6 +14,8 @@
     </div>
     <ul class="nav navbar-nav">
       <li class="active"><a href="../main/main.do">Home</a></li>
+      <li class="active"><a href="../member/join.do">회원가입</a></li>
+      <li class="active"><a href="../reserve/date.do">예약</a></li>
       
       <li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">맛집<span class="caret"></span></a>
