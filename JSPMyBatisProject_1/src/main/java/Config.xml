@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+ "https://mybatis.org/dtd/mybatis-3-config.dtd">
+ <!-- getConnection / disConnection -->
+ <configuration>
+ 	<!-- 
+ 		 Content Model : (properties?, settings?, typeAliases?, typeHandlers?, objectFactory?, objectWrapperFactory?, 
+ 		 reflectorFactory?, plugins?, environments?, databaseIdProvider?, mappers?)
+ 	 -->
+ 	 <properties resource="db_properties"/>
+ 	 <typeAliases> <!-- vo -->
+ 	 	<typeAlias type="com.sist.dao.EmpVO" alias="EmpVO"/>
+ 	 	<typeAlias type="com.sist.dao.DeptVO" alias="DeptVO"/>
+ 	 </typeAliases>
+ 	 <environments default="development"> <!-- db -->
+ 	 	<environment id="development">
+ 	 		<transactionManager type="JDBC"/>
+ 	 		<!-- 
+ 	 				Commit, Rollback
+ 	 				1. JDBC : AutoCommit
+ 	 				2. MANAGE : 상황에 따라 관리자 처리 
+ 	 		 -->
+ 	 		 <!-- db정보 -->
+ 	 		<dataSource type="POOLED">
+ 	 			<!-- DI -->
+ 	 			<property name="driver" value="${driver}"/>
+ 	 			<property name="url" value="${url}"/>
+ 	 			<property name="username" value="${username}"/>
+ 	 			<property name="password" value="${password}"/>
+ 	 		</dataSource>
+ 	 	</environment>
+ 	 </environments>
+ 	 <mappers> <!-- sql -->
+ 	 	<mapper resource="com/sist/dao/emp_mapper.xml"/>
+ 	 </mappers>
+ </configuration>
