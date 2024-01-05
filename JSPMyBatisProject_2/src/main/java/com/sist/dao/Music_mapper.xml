@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 
+		1. SQL문장을 저장하는 공간 => SqlSessionFactory => SQL 문장을 찾아준다.
+		   => 라이브러리는 자바소스를 변경할 수 없다. (변경, 요청 => XML)
+		      => Spring / MyBatis
+		      => 웹 => 톰캣 (server.xml, web.xml)
+		2. mapper는 기본은 table 당 한개씩 생성
+		   Config는 1개만 존재 => 공통
+		   => VO등록 , mapper를 등록 , 오라클 연결
+		3. mapper
+		   => <select id="" resultType="" parameterType="">
+		   			  ====  ============= ================
+		   			  |		|			  |
+		   			  구분자(중복허용안됨)	  |
+		   			  		|			  |
+		   			        sql문장 실행 후 받는 변수
+		   			        ~VO, String, int...
+		   			        			  |
+		   	  SELECT COUNT(*) FROM table_name
+		   	  => resultType="int"
+		   	  
+		 ///////////////////////////////////////////////////////////
+		 13.
+		   			        			  
+ -->
+<mapper namespace="Music_mapper">
+	<select id="musicFindData" resultType="MusicVO" parameterType="hashmap">
+		SELECT no, title, singer, poster, state, album, idcrement
+		FROM genie_music
+		WHERE
+		<trim prefixOverrides="OR"> <!-- OR 지우기 -->
+		 <foreach collection="fsArr" item="fs">
+		  <trim prefix="OR"> <!-- OR 첨부 -->
+		   <choose>
+		   <!-- 인식 '' => 비교를 하면 정수로 바뀐다. => 반드시 문자열 변환시켜 주어야 한다. -->
+			<when test="fs=='T'.toString()">
+				title LIKE '%'||#{ss}||'%'
+			</when>
+			<when test="fs=='S'.toString()">
+				singer LIKE '%'||#{ss}||'%'
+			</when>
+			<when test="fs=='A'.toString()">
+				album LIKE '%'||#{ss}||'%'
+			</when>
+		   </choose>
+		  </trim>
+		 </foreach>
+		</trim>
+	</select>
+</mapper>
