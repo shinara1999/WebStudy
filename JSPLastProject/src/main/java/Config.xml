@@ -16,7 +16,7 @@
      <dataSource type="POOLED">
        <!--  POOLED(Connection) / UNPOOLED(일반 JDBC) -->
        <property name="driver" value="oracle.jdbc.driver.OracleDriver"/>
-       <property name="url" value="jdbc:oracle:thin:@localhost:1521:XE"/>
+       <property name="url" value="jdbc:oracle:thin:@211.238.142.101:1521:XE"/>
        <property name="username" value="hr"/>
        <property name="password" value="happy"/>
        <!-- 

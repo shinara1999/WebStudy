@@ -125,6 +125,7 @@ public class DispacherServlet extends HttpServlet {
 		// ================================================= url
 		//				    ================== contextPath
 		uri=uri.substring(request.getContextPath().length()+1); // contextPath까지 자르고 +1(/ 제거)을 하면 board/list.do가 남는다.
+		System.out.println("사용자 요청 uri:"+uri);
 		try {
 			for(String cls:clsList)
 			{

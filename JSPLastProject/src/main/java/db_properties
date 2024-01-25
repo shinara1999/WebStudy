@@ -1,4 +1,4 @@
 name="driver" value="oracle.jdbc.driver.OracleDriver"
-name="url" value="jdbc:oracle:thin:@localhost:1521:XE"
+name="url" value="jdbc:oracle:thin:@211.238.142.101:1521:XE"
 name="username" value="hr"
 name="password" value="happy"
