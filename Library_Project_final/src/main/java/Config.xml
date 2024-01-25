@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+ "https://mybatis.org/dtd/mybatis-3-config.dtd">
+<!-- 
+   xml 
+    = React
+    1. 태그의 순서 , 속성 순서
+    2. 여는 태그 / 닫는 태그 동일  = 계층구조가 명확해야 된다
+    3. 속성값 = 반드시 ""
+    4. 목적 : 운영체제 호환이 좋다
+             => 언어호환이 좋다 
+             => 단점 : 소스가 길어지면 속도가 저하 (파일이 커진다)
+                스프링/마이바티스는 방지 => 분산 처리 
+             => Config.xml => 환경 설정과 mapper를 모아주는 역할
+                 = mapper.xml => SQL문장 저장 
+                 = mapper.xml 
+             => 개발자 요구사항 => 순수하게 자바로만 ...
+                               XML = 어노테이션 
+                               XML전송 = JSON
+ -->
+<configuration>
+  <typeAliases>
+     <typeAlias type="com.sist.vo.MajorctVO" alias="MajorctVO"/>
+     <typeAlias type="com.sist.vo.MiddlectVO" alias="MiddlectVO"/>
+     <typeAlias type="com.sist.vo.NoticeVO" alias="NoticeVO"/>
+     <typeAlias type="com.sist.vo.OtherLibBookVO" alias="OtherLibBookVO"/>
+     <typeAlias type="com.sist.vo.OtherLibVO" alias="OtherLibVO"/>
+     <typeAlias type="com.sist.vo.PickupCustomerVO" alias="PickupCustomerVO"/>
+     <typeAlias type="com.sist.vo.ProgramApplicationVO" alias="ProgramApplicationVO"/>
+     <typeAlias type="com.sist.vo.ProgramVO" alias="ProgramVO"/>
+     <typeAlias type="com.sist.vo.QnaCommentVO" alias="QnaCommentVO"/>
+     <typeAlias type="com.sist.vo.QnaVO" alias="QnaVO"/>
+     <typeAlias type="com.sist.vo.SeatReserveVO" alias="SeatReserveVO"/>
+     <typeAlias type="com.sist.vo.SeatVO" alias="SeatVO"/>
+     <typeAlias type="com.sist.vo.UserVO" alias="UserVO"/>
+     <typeAlias type="com.sist.vo.AllLikeVO" alias="AllLikeVO"/>
+	<typeAlias type="com.sist.vo.AllReplyVO" alias="AllReplyVO"/>
+	<typeAlias type="com.sist.vo.BoardVO" alias="BoardVO"/>
+	<typeAlias type="com.sist.vo.BookCartVO" alias="BookCartVO"/>
+	<typeAlias type="com.sist.vo.BookDeliverVO" alias="BookDeliverVO"/>
+	<typeAlias type="com.sist.vo.bookInfoVO" alias="bookInfoVO"/>
+	<typeAlias type="com.sist.vo.BookMainVO" alias="BookMainVO"/>
+	<typeAlias type="com.sist.vo.BookReserve" alias="BookReserve"/>
+	<typeAlias type="com.sist.vo.BookReserveCountVO" alias="BookReserveCountVO"/>
+	<typeAlias type="com.sist.vo.BookStoreVO" alias="BookStoreVO"/>
+	<typeAlias type="com.sist.vo.DHowVO" alias="BookDHowVO"/>
+	<typeAlias type="com.sist.vo.FavorLoanVO" alias="FavorLoanVO"/>
+	<typeAlias type="com.sist.vo.WebFindVO" alias="WebFindVO"/>
+	<typeAlias type="com.sist.vo.ZipcodeVO" alias="ZipcodeVO"/>
+  </typeAliases>
+  <environments default="development">
+    <environment id="development">
+      <transactionManager type="JDBC"/>
+      <dataSource type="POOLED">
+        <property name="driver" value="oracle.jdbc.driver.OracleDriver"/>
+        <property name="url" value="jdbc:oracle:thin:@211.238.142.119:1521:XE"/>
+        <property name="username" value="hr"/>
+        <property name="password" value="happy"/>
+      </dataSource>
+    </environment>
+  </environments>
+  <mappers>
+ 
+  </mappers>
+</configuration>

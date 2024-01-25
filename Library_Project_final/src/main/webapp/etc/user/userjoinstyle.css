@@ -1,0 +1,117 @@
+[class*="fontawesome-"]:before {
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+body {
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+form#login-form {
+  background: #fff;
+  width: 57%;
+  margin:0% 0% 3% 10%;
+  overflow: hidden;
+  position: relative;
+  border-radius: 0.3em;
+  -moz-box-shadow: 0 0 0.1em rgb(128, 128, 128);
+  -webkit-box-shadow: 0 0 0.1em rgb(128, 128, 128);
+  box-shadow: 0 0 0.1em rgb(128, 128, 128);
+}
+form#login-form div.heading {
+  background: #1245AB;
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 1.5em;
+  font-size: 1.3em;
+}
+
+h2 {
+  display: inline-block;
+  color: rgb(0, 0, 0);
+  font-size: 15px;
+  /*margin-top: 10%;
+  margin-left:14%;*/
+  color:black;
+}
+div.left input[type="text"], div.left input[type="password"],
+div.left input[type="email"]
+{
+  padding: 0.5em;
+  margin: 3% 0% 0% 14%;
+  max-width: 70%;
+  -moz-border-radius: 0.1em;
+  -webkit-border-radius: 0.1em;
+  border-radius: 0.1em;
+  -moz-transition: all 0.15s ease-in-out;
+  -o-transition: all 0.15s ease-in-out;
+  -webkit-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+
+  background-color: #f9f9f9;
+  border: 1px solid #e5e5e5;
+  border-radius: 2px;
+}
+
+div.left input[type="date"]
+{
+  padding: 0.5em;
+  margin: 1% 0% 0% 14%;
+  max-width: 70%;
+  -moz-border-radius: 0.1em;
+  -webkit-border-radius: 0.1em;
+  border-radius: 0.1em;
+  -moz-transition: all 0.15s ease-in-out;
+  -o-transition: all 0.15s ease-in-out;
+  -webkit-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+
+  background-color: #f9f9f9;
+  border: 1px solid #e5e5e5;
+  border-radius: 2px;
+}
+
+div.left input[type="text"]:focus, div.left input[type="password"]:focus {
+  outline: none;
+  border: 0.1em solid #919191;
+}
+
+input[type="button"], input[type="submit"] {
+  width: 20%;
+  background-color: #1245AB;
+  margin:3% 0% 0% 1%;
+  outline: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  border: none;
+  letter-spacing: 0.1em;
+  font-weight: bold;
+  -moz-border-radius: 0.2em;
+  -webkit-border-radius: 0.2em;
+  border-radius: 0.2em;
+  -moz-transition: all 0.15s ease-in-out;
+  -o-transition: all 0.15s ease-in-out;
+  -webkit-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+}
+input[type="button"]:hover, input[type="submit"]:hover {
+  background: linear-gradient(110deg, #53a2e0 10%,#3f6fd1 80%);
+  
+}
+
+input[type="radio"] {
+	  display: none;
+}
+
+#male{
+	margin-left: 12%;
+	margin-top: 1.5%
+}
+
+#res{
+	background-color: white;
+	text-align:right;
+	margin: 1% 0% 0% 14%;
+    max-width: 70%;
+}

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sist.dao.goods-mapper">
+  <select id="goodsListData" resultType="GoodsVO" parameterType="hashmap">
+    SELECT no,goods_poster,goods_name,goods_price,num
+    FROM (SELECT no,goods_poster,goods_name,goods_price,rownum as num
+    FROM (SELECT no,goods_poster,goods_name,goods_price
+    FROM ${tab_name} ORDER BY no ASC))
+    WHERE num BETWEEN #{start} AND #{end}
+  </select>
+  <!-- 
+      "FROM "+tab[type]
+   -->
+  <select id="goodsTotalPage" resultType="int" parameterType="hashmap">
+    SELECT CEIL(COUNT(*)/20.0)
+    FROM ${tab_name}
+  </select>
+  <!-- 상세보기  -->
+  <!-- 
+       ? => #{}('') , ${}=> table,column
+       ?가 한개면 => 해당 데이터형 
+       ?가 여러개면 => Map,VO
+       Map => #{start} => map.put("start",1)
+                =====              =====
+                map.get("start")
+       VO  => #{start} => vo.setStart(1)
+                vo.getStart()
+                
+       WHERE no>2  == WHERE no&gt;2
+       WHERE no<3  == WHERE no&lt;3
+       
+   -->
+  <!-- 
+     * 반드시 변수=컬럼  SELECT no , goods_name ...
+                           ====  ===========
+                           setNo() setGoods_name()
+   -->
+  <select id="goodsDetailData" resultType="GoodsVO"
+   parameterType="hashmap">
+   SELECT *
+   FROM ${tab_name}
+   WHERE no=#{no}
+  </select>
+  <!-- 존재하는 상품확인 -->
+  <select id="cartIsGoodsCount" resultType="int" parameterType="CartVO">
+    SELECT COUNT(*)
+    FROM cart
+    WHERE goods_no=#{goods_no} AND type=#{type} AND issale!=1
+    AND id=#{id}
+  </select>
+  <update id="cartGoodsUpdate" parameterType="CartVO">
+    UPDATE cart SET
+    amount=amount+#{amount}
+    WHERE goods_no=#{goods_no} AND type=#{type} AND id=#{id} 
+  </update>
+  <!-- 
+    cart_no NUMBER,
+   goods_no NUMBER,
+   TYPE NUMBER,
+   amount NUMBER,
+   price NUMBER,
+   id VARCHAR2(20),
+   ischeck NUMBER DEFAULT 0,
+   issale NUMBER DEFAULT 0,
+   regdate DATE DEFAULT SYSDATE
+   -->
+  <insert id="cartGoodsInsert" parameterType="CartVO">
+    INSERT INTO cart VALUES(
+     (SELECT NVL(MAX(cart_no)+1,1) FROM cart),
+     #{goods_no},#{type},#{amount},#{price},#{id},
+     0,0,SYSDATE
+    )
+  </insert>
+  <!-- mypageList(cart) -->
+  <resultMap type="com.sist.vo.CartVO" id="cartMap">
+   <result property="gvo.goods_poster" column="goods_poster"/>
+   <result property="gvo.goods_name" column="goods_name"/>
+   <result property="gvo.goods_price" column="goods_price"/>
+  </resultMap> 
+  <select id="mypageGoodsCartData" resultMap="cartMap" parameterType="hashmap">
+    SELECT cart_no,goods_no,amount,regdate,issale,ischeck,price,
+     (SELECT goods_poster FROM goods_all WHERE no=cart.goods_no) as goods_poster,
+     (SELECT goods_name FROM goods_all WHERE no=cart.goods_no) as goods_name,
+     (SELECT goods_price FROM goods_all WHERE no=cart.goods_no) as goods_price
+    FROM cart
+    WHERE id=#{id} AND issale!=1
+    ORDER BY cart_no DESC
+  </select>
+  
+  <insert id="cartBuyInsert" parameterType="CartVO">
+    INSERT INTO cart VALUES(
+     (SELECT NVL(MAX(cart_no)+1,1) FROM cart),
+     #{goods_no},#{type},#{amount},#{price},#{id},
+     0,1,SYSDATE
+    )
+  </insert>
+  
+  <select id="mypageGoodsBuyData" resultMap="cartMap" parameterType="hashmap">
+    SELECT cart_no,goods_no,amount,regdate,issale,ischeck,price,
+     (SELECT goods_poster FROM goods_all WHERE no=cart.goods_no) as goods_poster,
+     (SELECT goods_name FROM goods_all WHERE no=cart.goods_no) as goods_name,
+     (SELECT goods_price FROM goods_all WHERE no=cart.goods_no) as goods_price
+    FROM cart
+    WHERE id=#{id} AND issale=1
+    ORDER BY cart_no DESC
+  </select>
+  <delete id="cartDelete" parameterType="int">
+   DELETE FROM cart
+   WHERE cart_no=#{cart_no}
+  </delete>
+  <update id="goodsCartBuy" parameterType="int">
+   UPDATE cart SET
+   issale=1
+   WHERE cart_no=#{cart_no}
+  </update>
+</mapper>

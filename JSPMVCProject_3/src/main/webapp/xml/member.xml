@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE member SYSTEM "member.dtd">
+<!-- SYSTEM : private dtd / PUBLIC : 공개된 dtd => 두개 중 골라서 사용 -->
+
+<!-- Spring / MyBatis -->
+<member>
+	<list>
+		<id>shin</id>				<!-- 순서 주의 -->
+		<pwd>1234</pwd>
+		<name>신아라</name>
+		<address>여수</address>
+		<phone>010-1111-1111</phone>
+	</list>
+</member>

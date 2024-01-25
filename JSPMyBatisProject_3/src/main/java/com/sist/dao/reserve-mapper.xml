@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sist.dao.reserve-mapper">
+  <!--  맛집 목록 출력  -->
+  <select id="reserveFoodListData" resultType="FoodVO" parameterType="hashmap">
+    SELECT fno,poster,name 
+    FROM food_menu_house
+    <if test="no==1">
+     WHERE type LIKE '%한식%'
+    </if>
+    <if test="no==2">
+     WHERE type LIKE '%양식%'
+    </if>
+    <if test="no==3">
+     WHERE type LIKE '%중식%'
+    </if>
+    <if test="no==4">
+     WHERE type LIKE '%일식%'
+    </if>
+  </select>
+  <select id="reserveDays" resultType="string" parameterType="int">
+    SELECT rday FROM food_menu_house
+    WHERE fno=#{fno}
+  </select>
+  <select id="reserveTimes" resultType="string" parameterType="int">
+    SELECT rtime FROM reserve_day
+    WHERE rno=#{rno}
+  </select>
+  <select id="reserveGetTime" resultType="string" parameterType="int">
+    SELECT time FROM reserve_time
+    WHERE tno=#{tno}
+  </select>
+  <!--  예약 정보 저장 -->
+  <!-- 
+     NO                                        NOT NULL NUMBER
+ ID                                                 VARCHAR2(20)
+ FNO                                                NUMBER
+ DAY                                       NOT NULL VARCHAR2(100)
+ TIME                                      NOT NULL VARCHAR2(100)
+ INWON                                     NOT NULL VARCHAR2(50)
+ REGDATE                                            DATE
+ OK     
+   -->
+  <insert id="reserveInsert" parameterType="ReserveInfoVO">
+    INSERT INTO reserve_info VALUES(
+      (SELECT NVL(MAX(no)+1,1) FROM reserve_info),
+      #{id},#{fno},#{day},#{time},#{inwon},
+      SYSDATE,0
+    )
+  </insert>
+  <!-- 마이페이지 예약정보 읽기 -->
+  <resultMap type="com.sist.vo.ReserveInfoVO" id="myMap">
+    <result property="fvo.poster" column="poster"/>
+    <result property="fvo.name" column="name"/>
+    <result property="fvo.address" column="address"/>
+    <result property="fvo.phone" column="phone"/>
+  </resultMap>
+  <select id="reserveMyPageListData" resultMap="myMap" parameterType="string">
+    SELECT no,r.fno,poster,name,address,phone,
+           day,r.time,inwon,regdate,ok
+    FROM reserve_info r , food_menu_house f
+    WHERE r.fno=f.fno
+    AND id=#{id}
+    ORDER BY no DESC
+  </select>
+  <!-- 어드민페이지 예약정보 읽기-->
+  <select id="reserveAdminPageListData" resultMap="myMap">
+    SELECT no,r.fno,poster,name,address,phone,
+           day,r.time,inwon,regdate,id,ok
+    FROM reserve_info r , food_menu_house f
+    WHERE r.fno=f.fno
+    ORDER BY no DESC
+  </select>
+  <!-- 어드민 예약 승인 -->
+  <update id="reserveAdminOk" parameterType="int">
+    UPDATE reserve_info SET
+    ok=1
+    WHERE no=#{no}
+  </update>
+</mapper>

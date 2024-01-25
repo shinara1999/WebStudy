@@ -1,0 +1,37 @@
+@charset "UTF-8";
+/* searchForm 공통 적용 */
+	#searchForm{
+		background: url("https://www.junggulib.or.kr/include/image/common/bg_pattern.png");
+		padding: 15px;
+		border-radius: 10px;
+		overflow: hidden;
+	}
+	#searchForm select{
+		display: inline-block;
+		width: 150px;
+	}
+	#searchForm > div > div{
+		background-color: white;
+	}
+	#searchForm input{
+		height: 46px;
+	}
+	#searchOp{
+		width: 120px;
+		float: left;
+		line-height: 0;
+	}
+	#searchForm input[type="submit"]{
+		width: 90px;
+		font-size: 18px;
+		line-height: 0;
+		padding: 0;
+		font-weight: normal;
+	}
+	#searchForm input[type="date"]{
+		border: 1px solid #dbdbdb;
+		background: rgba(144, 144, 144, 0.075);
+		border-radius: 6px;
+		padding: 0 16px;
+	}
+	/* ----------------------------------- */

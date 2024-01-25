@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  
+		1. 태그 정의 <!ELEMENT>
+		   <!ELEMENT html (head,body)>
+		   <!ELEMENT head (title,meta,script,style,link)>
+		   ? => 사용가능 / 미사용
+		   * => 0번이상
+		   | => 선택		(th|td)*
+		   + => 1번 이상
+		   default => 반드시 사용
+		   
+		   Element : Server
+		   Content Model : (Listener? | GlobalNamingResources? | Service?)* => * 여러번 쓸 수 있다는 뜻
+		   					=========   =====================    ======== => 이 순서대로 와야 한다.
+		   																	 (서비스 다음에 리스너 오면 안됨.)
+		   
+		2. 속성 정의 <!ATTLIST>
+		   id    => primary key
+		   idref => foreign key
+		
+		3. 변수 정의 <!ENTITY>
+		   <!ENTITY nbsp ' '>	=> &nbsp;
+		   <!ENTITY lt '<'>		=> &lt;
+		   <!ENTITY gt '>'>		=> &gt;
+		   <id></id> = <!ELEMENT id (#PCDATA)>
+-->
+
+<!ELEMENT member (list+)>
+<!ELEMENT list (id,pwd,name,address,(phone|tel),content?)>
+<!ELEMENT id (#PCDATA)>
+<!ELEMENT pwd (#PCDATA)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT address (#PCDATA)>
+<!ELEMENT phone (#PCDATA)>
+<!ELEMENT tel (#PCDATA)>
+<!ELEMENT content (#PCDATA)>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

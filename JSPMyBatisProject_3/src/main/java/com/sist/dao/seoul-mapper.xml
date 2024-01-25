@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sist.dao.seoul-mapper">
+	<!-- 
+			<sql>		: SQL문장중에 중복이 있는 경우	
+			<select>	: 데이터 검색
+						  = resultType => 클래스 지정 (vo)
+						  = parameterType 
+						  = resultMap => rs.next() => 값받는 변수 지정
+						    = subquery / join
+						  @Select()
+			<insert>	: 데이터 추가
+						  = parameterType (?에 추가되는 데이터)
+			<selectKey> : 자동 증가 번호
+						  = keyProperty (증가 대상 컬럼)
+						  = resultType="int"
+						  = order : 먼저 수행 order="before|after"
+			<update> 	: 데이터 수정
+						  = parameterType (?에 추가되는 데이터)
+			<delete>	: 데이터 삭제
+						  = parameterType (?에 추가되는 데이터)
+						  
+			=> XML => Annotation으로 변경되어가고있다.
+			   ===	  ==========
+			    | 공통 사용 : 에러날 확률이 많다.
+			    		   | 개발자마다 사용
+	 -->
+	<sql id="select">
+		SELECT no, poster, title, num
+		FROM (SELECT no, poster, title, rownum as num
+		FROM (SELECT no, poster, title
+		FROM
+	</sql>
+	<sql id="where">
+	    ORDER BY no ASC))
+		WHERE num BETWEEN #{start} AND #{end}
+	</sql>
+	<select id="seoulLocationListData" resultType="SeoulVO" parameterType="hashmap">
+		<include refid="select"/> seoul_location
+		<include refid="where"/>
+	</select>
+	<select id="seoulNatureListData" resultType="SeoulVO" parameterType="hashmap">
+		<include refid="select"/> seoul_nature
+		<include refid="where"/>
+	</select>
+	<select id="seoulShopListData" resultType="SeoulVO" parameterType="hashmap">
+		<include refid="select"/> seoul_shop
+		<include refid="where"/>
+	</select>
+	<sql id="total">
+		SELECT CEIL(COUNT(*)/20.0) FROM
+	</sql>
+	<select id="seoulLocationTotalPage" resultType="int">
+		 <include refid="total"/> seoul_location
+	</select>
+	<select id="seoulNatureTotalPage" resultType="int">
+		 <include refid="total"/> seoul_nature
+	</select>
+	<select id="seoulShopTotalPage" resultType="int">
+		 <include refid="total"/> seoul_shop
+	</select>
+	<!-- 상세보기 : hit 증가 -->
+	<update id="seoulLocationHitIncrement" parameterType="int">
+		UPDATE seoul_location SET
+		hit=hit+1
+		WHERE no=#{no}
+	</update>
+	<select id="seoulLocationDetailData" resultType="SeoulVO" parameterType="int">
+		SELECT * FROM seoul_location
+		WHERE no=#{no}
+	</select>
+	<!-- 인접 맛집 -->
+	<select id="seoulFoodData" resultType="FoodVO" parameterType="string">
+		SELECT fno, name, poster, type, rownum
+		FROM food_menu_house
+		WHERE address LIKE '%'||#{address}||'%'
+		AND rownum&lt;=5
+	</select>
+</mapper>

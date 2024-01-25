@@ -1,0 +1,291 @@
+@charset "UTF-8";
+.imgArea{
+	width: 30%;
+	height: auto;
+	margin-top: 1.5%;
+	margin-bottom: 1.3%;
+	margin-left: 13%;
+	float: left;
+	
+}
+.titleArea{
+	width: 85%;
+}
+.iconC_dtype em.txt {
+    padding: 0 4px;
+    font-size: 15px;
+    color: #666;
+    font-weight: normal;
+    font-style: normal;
+    height: 18px;
+    border: solid 1px #d8d8d8;
+    background-color: #fff;
+    line-height: 80px;
+    
+}
+.pricefullArea{
+	width: 100%;
+	margin-left: 0px auto;
+}
+
+#gd_name{
+	margin-right: 2px;
+    line-height: 1.2em;
+    color: #333;
+    font-size: 30px;
+    font-weight: 600;
+    width: 75%;
+    margin: 0px;
+    margin-top: 0%;
+    overflow-wrap: break-word;
+    
+}
+.horizontal-line {
+            border-top: 1px solid #ccc; /* 선 색상 및 두께 설정 */
+            margin-top: 10px; /* 선과 위쪽 내용 간격 설정 */
+            margin-bottom: 10px; /* 선과 아래쪽 내용 간격 설정 */
+}
+#divi {
+  margin: 15px 15px 0 15px;
+  width: 3px;
+  height: 12px;
+  text-indent: -999em;
+} 
+#purchaseUl{
+	margin: 0 0 2em 0;
+	padding-left: 0em;
+	margin-top: 0.5%;
+} 
+#bookisbn{
+	color: orange;
+	margin-left: 1.0%;
+}
+#bookauthor{
+		color: black;
+}
+.priceArea{
+	border-top: 1px solid lightgray;
+	border-bottom: 1px solid lightgray;
+	margin-top: 1%;
+	width: 75%;
+}
+.titleArea_top{
+	margin-bottom: 0.5%;
+}
+#priceUl{
+	margin: 0 0 0 0;
+	padding-left: 0em;
+	margin-top: 3%;
+	margin-bottom: 3%;
+}
+.bookinfoArea{
+	margin-top: 1%;
+}
+
+.gd_action {
+	margin-right: 23%;
+    margin-bottom: 3%;
+    width: 24.8%;
+    height: 20%;
+    background-color: #eee;
+}
+
+
+.row{
+	width: 75%;
+	height: auto;
+	margin: 0px auto;
+	margin-top: 1.5%;
+}
+
+	#fixedprice{
+		font-size: 20px;
+		margin-left: 15%;
+	}
+	#booktitle{
+		color: midnightblue;
+		font-size: 25px;
+		font-weight: bold;
+	}
+	
+	#saleprice{
+		font-size: 25px;
+		color: orangered;
+		font-weight: bold;
+		margin-left: 11%;
+	}
+	#label{
+		font-size: 10px;
+		color: yellowgreen;
+		font-weight: bold;
+	}
+	#price2{
+		font-size: 25px;
+		font-weight: bold;
+		color: yellowgreen;
+	}
+	#delivery{
+		color: lightslategray;
+	}
+	#star{
+		color: orange;
+		font-weight: bold;
+	}
+	#bold{
+		font-weight: bold;
+	}
+	#count{
+		color: lightslategrey;
+	}
+	img[src*="delivery3"]{
+		width: 20px;
+		height: 20px;
+	}
+	#sel{
+		margin-top: 10px;
+		margin-bottom: 10px;
+    	width: 75%;
+    	height: 40px;
+	}
+	#cart, #buy, #backto{
+		width: 180px;
+		height: 60px;
+		font-size: 20px;
+		font-weight: bold;
+		margin-left: 5px;
+		margin-top: 1%;
+	}
+	#cart{
+		background-color: skyblue;
+		color: white;
+	}
+	#buy{
+		background-color: navy;
+		color: white;
+	}
+	#backto{
+		background-color: gray;
+		color: white;
+	}
+	hr{
+		width: 75%;
+		margin: 0px auto;
+	}
+	h2{
+		width: 75%;
+		margin: 0px auto;
+		margin-top: 5%;
+	}
+	p{
+		width: 75%;
+		margin-top: 5%;
+		margin: 0px auto;
+	}
+  #percent{
+	  color: orangered;
+  }
+  #totalpay{
+	  margin-left: 56%;
+	  color: orangered;
+	  font-size: 35px;
+	  font-weight: bold;
+	  margin-top: 2%;
+  }
+  table tbody tr:nth-child(2n + 1) {
+    background-color:white;
+}
+table tbody tr {
+	border: solid 0px #dbdbdb;	
+}
+#bookpurchase_flex 
+{
+  display: flex;
+  justify-content: space-between;
+}
+#reviewText {
+	margin: 0px auto;
+	width: 75%;
+	height: 10%;
+}
+#reviewBtn{
+	background-color: white;
+    border: solid 1px lightgray;
+    color: black !important;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 600;
+    height: 2.55em;
+    line-height: 2.15em;
+    padding: 0 1.5em;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    margin-left: 79.8%;
+}
+#bookinfo{
+	background-color: white;
+    border: solid 1px lightgray;
+    color: black !important;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 600;
+    height: 2.55em;
+    line-height: 2.15em;
+    padding: 0 1.5em;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    margin-right: 5px;
+}
+#purchasetb td{
+	padding: 0%;
+}
+html{
+	scroll-behavior: smooth;
+}
+/* 별점 css */
+.star-rating {
+  display: flex;
+  flex-direction: row-reverse;
+  font-size: 3.5rem;
+  line-height: 2.5rem;
+  justify-content: space-around;
+  padding: 0 0.2em;
+  text-align: center;
+  width: 5em;
+  margin: 0px auto;
+  margin-top: 30px;
+}
+ 
+.star-rating input {
+  display: none;
+}
+ 
+.star-rating label {
+  -webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 0.8px;
+  -webkit-text-stroke-color: #2b2a29;
+  cursor: pointer;
+}
+ 
+.star-rating :checked ~ label {
+  -webkit-text-fill-color: red;
+}
+ 
+.star-rating label:hover,
+.star-rating label:hover ~ label {
+  -webkit-text-fill-color: orangered;
+}
+input[type="checkbox"] + label:before, input[type="radio"] + label:before {
+	background: none;
+	border: none;	
+}
+input[type="radio"] + label {
+	padding-left: 0px;	
+}
+
+#star_number {
+    text-align: center;
+    font-size: 24px; 
+    margin-top: 0px;
+}

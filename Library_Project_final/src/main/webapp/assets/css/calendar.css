@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap");
+* {
+  font-family: Ubuntu, sans-serif;
+}
+
+/*body {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f0f0f5;
+}*/
+
+.calendar {
+  background-color:#F5F5F5 ;
+  width: 400px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 20px ;
+  
+}
+.calendar > span {
+  background-color: lightskyblue;
+  color: white;
+  font-weight: 700;
+  font-size: 30px;
+  text-transform: capitalize;
+  width: 400px;
+  height: 70px;
+  border-radius: 20px 20px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.calendar .calendarbox {
+  width: 80%;
+  height: 60%;
+  margin-bottom: 45px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.calendar .calendarbox span {
+  font-size: 30px;
+  color: black;
+}
+.calendar .calendarbox span:nth-child(2) {
+  font-size: 65px;
+  font-weight: 700;
+  color: black;
+}
+
+* .calendar_id{
+	margin-top: 20px;
+	margin-left: 160px;
+	font-weight: bold;
+	color: black;
+}
+* .calendar_id2{
+	margin-top: 0px;
+	margin-left: 160px;
+	font-weight: bold;
+	color: black;
+}
+.calendar_table{
+	width: 400px;
+	height: 350px;
+	border: 1px solid lightgray;
+    border-collapse: collapse;
+}
+.homeinfo_banner{
+	width: 470px;
+    height: 350px;
+	overflow: hidden;
+    position: relative;
+}
+.homeinfo_slide{
+	float: left;
+    position: relative;
+}
+/* 홈 이용 */
+* .lib_hh{
+	width: auto;
+	height: 87.5px;
+}
